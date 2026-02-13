@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0612;
+  --foreground: #f8e9f0;
+  --rose: #ff6fb4;
+  --rose-soft: #ff9ad5;
+  --plum: #392042;
+  --glow: rgba(255, 111, 180, 0.35);
+  --card: rgba(22, 12, 32, 0.8);
+  --border: rgba(255, 192, 224, 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: radial-gradient(circle at top, rgba(62, 26, 82, 0.5), var(--background));
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+.romantic-glow {
+  box-shadow: 0 0 25px var(--glow);
+}
+
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+}
+
+.section-padding {
+  @apply px-6 py-10 md:px-12 lg:px-20;
+}
