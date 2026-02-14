@@ -31,7 +31,7 @@ export default function AaranLookGame() {
     const me = {
       key: "me",
       src: "/images/me.png",
-      label: "Me (always the cutest)",
+      label: "Njan - Nenmara Sreehari",
       alt: "Me",
       isMine: true,
       faded: false,
@@ -39,7 +39,7 @@ export default function AaranLookGame() {
     const celeb = {
       key: "celeb",
       src: currentCeleb,
-      label: "Celebrity look",
+      label: "Celebrity",
       alt: "Celebrity",
       isMine: false,
       faded: fadeCeleb,
@@ -114,7 +114,7 @@ export default function AaranLookGame() {
                 alt={item.alt}
                 label={item.label}
                 position={index === 0 ? "left" : "right"}
-                onClick={item.isMine ? handlePickMe : undefined}
+                onClick={item.isMine ? handlePickMe : handleHoverCeleb}
                 onHover={item.isMine ? undefined : handleHoverCeleb}
                 faded={item.faded}
               />
