@@ -245,7 +245,7 @@ const DrinkingGame: React.FC = () => {
       <div className={styles.wheelContainer}>
         <div className={styles.pointer}></div>
         <img 
-          src="/images/wheel.PNG" 
+          src="/images/wheel.png" 
           alt="Wheel" 
           className={styles.wheel} 
           style={{ transform: `rotate(${rotation}deg)` }}
