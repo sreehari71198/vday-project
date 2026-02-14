@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import FloatingDate from './FloatingDate';
 
@@ -19,7 +19,15 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   index,
   isLast 
 }) => {
+  const [isPortrait, setIsPortrait] = useState(false);
   const isEven = index % 2 === 0;
+
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    if (img.naturalHeight > img.naturalWidth) {
+      setIsPortrait(true);
+    }
+  };
 
   return (
     <motion.div
@@ -46,11 +54,16 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             `}>
               
               {/* Image Container */}
-              <div className="relative overflow-hidden rounded-xl aspect-[4/3] w-full md:w-[400px]">
+              <div className={`relative overflow-hidden rounded-xl w-full transition-all duration-500 ${
+                isPortrait 
+                  ? 'aspect-[3/4] md:w-[300px]' 
+                  : 'aspect-[4/3] md:w-[400px]'
+              }`}>
                 <img 
                   src={`/images/${image}`} 
                   alt={title}
                   loading="lazy"
+                  onLoad={handleImageLoad}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
