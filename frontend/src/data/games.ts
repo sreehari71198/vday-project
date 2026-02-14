@@ -11,4 +11,9 @@ export const gameTiles: GameTile[] = [
     description: "Ente Swabavam Select chyyuva. Simple",
     href: "/games/guna-vikarangal",
   },
+  {
+    title: "Drinking Game – 🥃",
+    description: "Spin the wheel!",
+    href: "/games/drinking-game",
+  },
 ];
